@@ -1,0 +1,43 @@
+# ============================================================================
+# PhotoKY - Git Ignore Rules (.gitignore)
+# ============================================================================
+
+# Sensitive Environment & Local Database Configurations (NEVER commit secrets)
+.env
+.env.*
+!.env.example
+config/db_custom.php
+
+# Embedded SQLite Databases & WAL files
+sql/*.sqlite
+sql/*.sqlite-shm
+sql/*.sqlite-wal
+sql/*.db
+
+# User Uploaded Images (keep directory structure & .htaccess only)
+uploads/originals/*
+!uploads/originals/.gitkeep
+uploads/thumbnails/*
+!uploads/thumbnails/.gitkeep
+uploads/temp/*
+
+# Legacy / Unused Subprojects & Dependencies
+photoky/
+node_modules/
+vendor/
+
+# Logs & Temporary Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS & Editor / IDE Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

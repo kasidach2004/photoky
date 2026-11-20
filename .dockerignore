@@ -1,0 +1,4 @@
+photoky/
+.git/
+node_modules/
+*.log

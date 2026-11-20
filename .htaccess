@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Security headers
+    <IfModule mod_headers.c>
+        Header set X-Content-Type-Options "nosniff"
+        Header set X-Frame-Options "SAMEORIGIN"
+        Header set X-XSS-Protection "1; mode=block"
+    </IfModule>
+
+    # Friendly URLs
+    RewriteRule ^photo/([a-zA-Z0-9_\-]+)/?$ photo.php?uuid=$1 [QSA,L]
+</IfModule>
